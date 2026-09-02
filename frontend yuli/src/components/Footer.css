@@ -1,0 +1,20 @@
+.footer {
+  background-color: var(--color-plum);
+  color: var(--color-ivory);
+  padding: 4rem 4rem 2rem;
+}
+
+.footer-brand h3 { font-size: 1.8rem; margin-bottom: 0.8rem; }
+.footer-brand p { max-width: 320px; opacity: 0.8; font-size: 0.9rem; }
+
+.footer-links { display: flex; gap: 5rem; margin: 3rem 0; }
+.footer-links h4 { font-size: 0.95rem; margin-bottom: 1rem; opacity: 0.9; }
+.footer-links a { display: block; font-size: 0.9rem; opacity: 0.75; margin-bottom: 0.6rem; }
+.footer-links a:hover { opacity: 1; }
+
+.footer-copy { font-size: 0.8rem; opacity: 0.6; border-top: 1px solid rgba(255,255,255,0.15); padding-top: 1.5rem; }
+
+@media (max-width: 768px) {
+  .footer { padding: 3rem 1.5rem 2rem; }
+  .footer-links { gap: 2.5rem; flex-wrap: wrap; }
+}

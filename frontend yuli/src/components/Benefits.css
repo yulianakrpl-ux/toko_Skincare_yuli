@@ -1,0 +1,16 @@
+.benefits {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  padding: 3rem 4rem;
+  background-color: var(--color-blush);
+}
+
+.benefit-item { text-align: center; color: var(--color-plum); }
+.benefit-item svg { margin-bottom: 0.8rem; }
+.benefit-item h4 { font-size: 1rem; margin-bottom: 0.5rem; font-family: var(--font-body); font-weight: 600; }
+.benefit-item p { font-size: 0.85rem; opacity: 0.8; line-height: 1.5; }
+
+@media (max-width: 900px) {
+  .benefits { grid-template-columns: repeat(2, 1fr); padding: 2.5rem 1.5rem; }
+}
