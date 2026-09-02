@@ -1,0 +1,32 @@
+.product-card { text-align: left; }
+
+.product-card-image {
+  position: relative;
+  background-color: var(--color-blush);
+  border-radius: 20px;
+  aspect-ratio: 1 / 1.1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  margin-bottom: 1rem;
+}
+
+.product-card-image img { width: 60%; object-fit: contain; }
+
+.product-card-badge {
+  position: absolute;
+  top: 0.8rem;
+  left: 0.8rem;
+  font-size: 0.7rem;
+  padding: 0.3rem 0.7rem;
+  border-radius: 50px;
+  background-color: var(--color-white);
+  color: var(--color-plum);
+}
+
+.product-card-badge.out { background-color: var(--color-plum); color: var(--color-white); }
+.product-card-badge.low { background-color: var(--color-sage); }
+
+.product-card-name { font-size: 1.1rem; margin-bottom: 0.4rem; }
+.product-card-price { font-size: 0.95rem; opacity: 0.8; }
