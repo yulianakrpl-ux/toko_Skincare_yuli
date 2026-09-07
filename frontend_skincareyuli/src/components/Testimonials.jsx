@@ -10,16 +10,16 @@ const testimonials = [
 function Testimonials() {
   return (
     <section className="testimonials">
-      <div className="testimonials-header">
-        <p className="testimonials-eyebrow">Testimoni</p>
-        <h2>Apa kata mereka</h2>
+      <div className="section-heading">
+        <p className="eyebrow">Testimoni</p>
+        <h2>Apa Kata Mereka</h2>
       </div>
       <div className="testimonials-grid">
         {testimonials.map((t, i) => (
           <div className="testimonial-card" key={i}>
             <div className="testimonial-stars">
               {Array.from({ length: t.rating }).map((_, idx) => (
-                <Star key={idx} size={16} fill="#4A2E35" strokeWidth={0} />
+                <Star key={idx} size={16} fill="currentColor" strokeWidth={0} />
               ))}
             </div>
             <p className="testimonial-text">"{t.text}"</p>

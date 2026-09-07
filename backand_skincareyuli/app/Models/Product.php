@@ -10,7 +10,8 @@ class Product extends Model
         'store_id',
         'name',
         'price',
-        'stock'
+        'stock',
+        'image'
     ];
 
     public function store()

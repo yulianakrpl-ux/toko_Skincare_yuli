@@ -1,11 +1,11 @@
-import { Leaf, ShieldCheck, Truck, Heart } from 'lucide-react';
+import { Leaf, FlaskConical, Rabbit, Globe2 } from 'lucide-react';
 import './Benefits.css';
 
 const benefits = [
-  { icon: Leaf, title: 'Bahan Alami', desc: 'Diformulasikan dari bahan alami pilihan tanpa efek samping berbahaya.' },
-  { icon: ShieldCheck, title: 'Teruji Dermatologis', desc: 'Semua produk sudah melalui uji klinis dan aman untuk kulit sensitif.' },
-  { icon: Truck, title: 'Pengiriman Cepat', desc: 'Dikirim langsung dari gudang kami ke seluruh Indonesia dalam 1-3 hari.' },
-  { icon: Heart, title: 'Cruelty Free', desc: 'Tidak diuji pada hewan, aman dan etis untuk digunakan sehari-hari.' },
+  { icon: Leaf, title: 'Bahan Alami', desc: 'Aman & bebas bahan berbahaya.' },
+  { icon: FlaskConical, title: 'Teruji Dermatologis', desc: 'Sudah lolos uji klinis.' },
+  { icon: Rabbit, title: 'Cruelty Free', desc: 'Tidak diuji pada hewan.' },
+  { icon: Globe2, title: 'Sustainable Beauty', desc: 'Baik untukmu & lingkungan.' },
 ];
 
 function Benefits() {

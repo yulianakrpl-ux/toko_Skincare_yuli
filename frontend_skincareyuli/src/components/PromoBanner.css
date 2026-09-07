@@ -1,0 +1,65 @@
+.promo-banner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: stretch;
+  margin: 1rem 4rem 4rem;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  min-height: 320px;
+}
+
+.promo-text {
+  background-color: var(--color-maroon);
+  color: var(--color-white);
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.promo-eyebrow {
+  font-size: 0.8rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  opacity: 0.85;
+  margin-bottom: 0.8rem;
+}
+
+.promo-text h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: var(--color-white);
+}
+
+.promo-description {
+  font-size: 0.95rem;
+  opacity: 0.9;
+  margin-bottom: 1.8rem;
+  max-width: 340px;
+}
+
+.promo-btn {
+  background-color: var(--color-white);
+  color: var(--color-maroon);
+  align-self: flex-start;
+}
+
+.promo-btn:hover {
+  background-color: var(--color-blush);
+}
+
+.promo-image {
+  background-color: var(--color-blush);
+}
+
+.promo-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+@media (max-width: 900px) {
+  .promo-banner { grid-template-columns: 1fr; margin: 1rem 1.5rem 3rem; }
+  .promo-image { min-height: 220px; }
+  .promo-text { padding: 2.2rem 1.8rem; }
+}

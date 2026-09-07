@@ -1,13 +1,21 @@
 :root {
+  --color-maroon: #7C3B4B;
+  --color-maroon-dark: #5A2836;
+  --color-maroon-light: #9C5468;
   --color-blush: #F7D9DD;
-  --color-blush-dark: #E8B4BC;
+  --color-blush-soft: #FBEAEC;
   --color-ivory: #FFF8F5;
-  --color-plum: #4A2E35;
+  --color-plum: #3A2530;
   --color-sage: #B8C9B0;
+  --color-gold: #D9A441;
   --color-white: #FFFFFF;
 
   --font-display: 'Fraunces', serif;
   --font-body: 'Inter', sans-serif;
+
+  --shadow-soft: 0 10px 30px rgba(90, 40, 54, 0.08);
+  --radius-lg: 22px;
+  --radius-full: 999px;
 }
 
 * {
@@ -36,4 +44,48 @@ a {
 
 ul {
   list-style: none;
+}
+
+button {
+  font-family: var(--font-body);
+}
+
+.eyebrow {
+  font-size: 0.8rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-maroon);
+  font-weight: 600;
+  margin-bottom: 0.8rem;
+  display: inline-block;
+}
+
+.section-heading {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.section-heading h2 {
+  font-size: 2.2rem;
+  color: var(--color-plum);
+}
+
+.btn-primary {
+  display: inline-block;
+  background-color: var(--color-maroon);
+  color: var(--color-white);
+  border: none;
+  padding: 0.9rem 2.2rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  border-radius: var(--radius-full);
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.btn-primary:hover {
+  background-color: var(--color-maroon-dark);
+  transform: translateY(-1px);
 }

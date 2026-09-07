@@ -1,28 +1,60 @@
+import { useEffect, useState } from 'react';
 import ProductCard from './ProductCard';
-import productImg from '../assets/hero.png';
+import { fetchProducts } from '../services/api';
 import './Products.css';
 
-// Data contoh — nanti diganti fetch dari API Laravel (/api/products)
-// Field disamakan dengan tabel Products di backend: store_id, name, price, stock
-const products = [
-  { id: 1, store_id: 1, name: 'Rose Glow Serum', price: 189000, stock: 23, image: productImg },
-  { id: 2, store_id: 1, name: 'Petal Soft Cleanser', price: 95000, stock: 5, image: productImg },
-  { id: 3, store_id: 1, name: 'Dewy Moisture Cream', price: 165000, stock: 0, image: productImg },
-  { id: 4, store_id: 1, name: 'Calm Sage Toner', price: 110000, stock: 120, image: productImg },
-];
-
 function Products() {
+  const [products, setProducts] = useState([]);
+  const [status, setStatus] = useState('loading'); // loading | success | error
+
+  useEffect(() => {
+    let isMounted = true;
+
+    fetchProducts()
+      .then((data) => {
+        if (!isMounted) return;
+        setProducts(data);
+        setStatus('success');
+      })
+      .catch(() => {
+        if (!isMounted) return;
+        setStatus('error');
+      });
+
+    return () => {
+      isMounted = false;
+    };
+  }, []);
+
   return (
     <section className="products" id="products">
-      <div className="products-header">
-        <p className="products-eyebrow">Best seller</p>
-        <h2>Produk pilihan kami</h2>
+      <div className="section-heading">
+        <p className="eyebrow">Best Seller</p>
+        <h2>Produk Pilihan Kami</h2>
       </div>
-      <div className="products-grid">
-        {products.map((product) => (
-          <ProductCard key={product.id} {...product} />
-        ))}
-      </div>
+
+      {status === 'loading' && (
+        <p className="products-status">Memuat produk...</p>
+      )}
+
+      {status === 'error' && (
+        <p className="products-status products-status-error">
+          Belum bisa memuat produk dari server. Pastikan backend Laravel
+          (php artisan serve) sedang berjalan, lalu refresh halaman ini.
+        </p>
+      )}
+
+      {status === 'success' && products.length === 0 && (
+        <p className="products-status">Belum ada produk. Tambahkan dari dashboard admin.</p>
+      )}
+
+      {status === 'success' && products.length > 0 && (
+        <div className="products-grid">
+          {products.map((product) => (
+            <ProductCard key={product.id} {...product} />
+          ))}
+        </div>
+      )}
     </section>
   );
 }

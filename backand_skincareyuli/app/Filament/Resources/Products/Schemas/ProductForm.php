@@ -2,6 +2,7 @@
 
 namespace App\Filament\Resources\Products\Schemas;
 
+use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\TextInput;
 use Filament\Schemas\Schema;
@@ -12,6 +13,14 @@ class ProductForm
     {
         return $schema
             ->components([
+
+                FileUpload::make('image')
+                    ->label('Foto Produk')
+                    ->image()
+                    ->directory('products')
+                    ->visibility('public')
+                    ->imageEditor()
+                    ->columnSpanFull(),
 
                 Select::make('store_id')
                     ->label('Toko')

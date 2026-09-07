@@ -3,20 +3,21 @@ import './Hero.css';
 
 function Hero() {
   return (
-    <section className="hero">
+    <section className="hero" id="home">
       <div className="hero-text">
-        <p className="hero-eyebrow">Perawatan kulit alami</p>
+        <p className="eyebrow">New in</p>
         <h1>
-          Kulit sehat<br />dimulai dari sini
+          Kulit Sehat.<br />Percaya Diri Nyata.
         </h1>
         <p className="hero-description">
-          Rangkaian skincare dengan bahan alami pilihan, diformulasikan untuk semua jenis kulit.
+          Rangkaian skincare bersih dengan bahan alami pilihan yang menutrisi,
+          menyempurnakan, dan memberdayakan kulitmu setiap hari.
         </p>
-        <button className="hero-button">Belanja Sekarang</button>
+        <a href="#products" className="btn-primary">Belanja Sekarang</a>
       </div>
 
       <div className="hero-image">
-        <img src={heroImage} alt="Produk skincare" />
+        <img src={heroImage} alt="Produk skincare Bloom Beauty" />
       </div>
     </section>
   );

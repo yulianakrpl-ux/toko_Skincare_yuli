@@ -21,5 +21,7 @@ class DatabaseSeeder extends Seeder
             'email' => 'yuliana@gmail.com',
             'password' => Hash::make('yuli12123'),
         ]);
+
+        $this->call(ProductSeeder::class);
     }
 }

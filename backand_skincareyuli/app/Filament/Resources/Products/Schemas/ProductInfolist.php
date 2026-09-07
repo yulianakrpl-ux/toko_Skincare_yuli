@@ -2,6 +2,7 @@
 
 namespace App\Filament\Resources\Products\Schemas;
 
+use Filament\Infolists\Components\ImageEntry;
 use Filament\Infolists\Components\TextEntry;
 use Filament\Schemas\Schema;
 
@@ -11,6 +12,8 @@ class ProductInfolist
     {
         return $schema
             ->components([
+                ImageEntry::make('image')
+                    ->label('Foto'),
                 TextEntry::make('store_id')
                     ->numeric(),
                 TextEntry::make('name'),
